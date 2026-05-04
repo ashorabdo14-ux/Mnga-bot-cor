@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = [
+  "tesseract",
+  "tesseract-lang",
+  "python311",
+]
+
+[phases.install]
+cmds = [
+  "pip install -r requirements.txt",
+]
+
+[start]
+cmd = "python bot.py"
+
+[variables]
+TESSDATA_PREFIX = "/nix/var/nix/profiles/default/share/tessdata"
